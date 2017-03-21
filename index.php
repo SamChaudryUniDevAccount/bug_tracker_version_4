@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $count = mysqli_num_rows($result);
 
-    if( $username == $myusername && password == $mypassword) {
+    if($count = mysqli_num_rows($result) == 1) {
 
         $_SESSION['login_user'] = $myusername;
 
