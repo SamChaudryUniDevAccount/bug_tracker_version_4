@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+    $sql = "SELECT username , password FROM user WHERE username = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
@@ -28,8 +28,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['login_user'] = $myusername;
 
         header("location: landing.php");
+
     }else {
+
         $error = "Your Login Name or Password is invalid";
+
     }
 }
 
@@ -49,14 +52,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <form action="" method="post">
     <div class="imgcontainer">
     </div>
-
     <div class="container">
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="username" required>
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" required>
-
         <button type="submit">Login</button>
     </div>
 </form>
