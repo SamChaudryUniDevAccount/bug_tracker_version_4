@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $count = mysqli_num_rows($result);
 
-    echo "Row count" . $count;
+    //echo . $count;
 
     if($count == 1) {
 
