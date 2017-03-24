@@ -12,6 +12,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
+    echo "username is {$myusername} and password is {$mypassword}";
+
     $sql = "SELECT username , password FROM user WHERE username = '$myusername' and passcode = '$mypassword'";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -19,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $count = mysqli_num_rows($result);
 
-    //echo . $count!;
+    echo $count;
 
     if($count == 1) {
 
@@ -52,7 +54,7 @@ else{
 <body>
 <h1>It's Alive!!!</h1>
 
-<form action="" method="post">
+<form action="/" method="post">
     <div class="imgcontainer">
     </div>
     <div class="container">
