@@ -21,14 +21,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
  //   echo "username is {$myusername} and password is {$mypassword}";
 
-    $sql = "SELECT username , password FROM user WHERE username = '$myusername' and passcode = '$mypassword'";
-    $result = mysqli_query($link,$sql);
+    $sql = "SELECT * FROM user WHERE username = '$myusername' and passcode = '$mypassword'";
+    if ($result = mysqli_query($link,$sql))
+    {
+        $count = mysqli_num_rows($result);
+        echo $count;
+
+    }
+    else{
+        echo "ERROR!";
+    }
     //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     //$active = $row['active'];
 
-    $count = mysqli_num_rows($result);
-
-    echo $count;
 
     if($count == 1) {
 
