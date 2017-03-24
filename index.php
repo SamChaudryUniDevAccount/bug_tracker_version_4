@@ -23,8 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT username , password FROM user WHERE username = '$myusername' and passcode = '$mypassword'";
     $result = mysqli_query($link,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row['active'];
+    //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    //$active = $row['active'];
 
     $count = mysqli_num_rows($result);
 
