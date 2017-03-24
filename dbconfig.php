@@ -1,9 +1,14 @@
 <?php
 
-$connectstr_dbhost = 'http://sc-cmm503.azurewebsites.net/';
-$connectstr_dbname = 'localdb';
-$connectstr_dbusername = 'username';
-$connectstr_dbpassword = 'password';
+//$connectstr_dbhost = 'http://sc-cmm503.azurewebsites.net/';
+//$connectstr_dbname = 'localdb';
+//$connectstr_dbusername = 'username';
+//$connectstr_dbpassword = 'password';
+
+$connectstr_dbhost = '';
+$connectstr_dbname = '';
+$connectstr_dbusername = '';
+$connectstr_dbpassword = '';
 
 
 foreach ($_SERVER as $key => $value) {
