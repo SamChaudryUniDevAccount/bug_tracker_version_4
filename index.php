@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($count == 1) {
 
-        session_register("myusername");
+        //session_register("myusername");
 
         $_SESSION['login_user'] = $myusername;
 
@@ -35,10 +35,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 }
+else{
+    ?>
 
 
 
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,5 +67,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+
+    <?php
+}
+?>
 
 
