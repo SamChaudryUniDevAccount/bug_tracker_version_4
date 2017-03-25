@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
     else{
-        echo "ERROR!";
+        echo "ERROR Something not working!";
     }
     //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     //$active = $row['active'];
