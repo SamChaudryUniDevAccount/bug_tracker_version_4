@@ -24,6 +24,6 @@ if(!isset($_SESSION['login_user'])){
 }else{
 
 
-    echo " Session Manager is corrupted..Contact administrator";
+    echo " Session Manager i error";
 
 }
